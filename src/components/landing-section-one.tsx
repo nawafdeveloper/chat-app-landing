@@ -1,25 +1,66 @@
 "use client";
 
+function DownloadIcon() {
+    return (
+        <svg aria-hidden="true" className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 3v12" />
+            <path d="m7 10 5 5 5-5" />
+            <path d="M5 21h14" />
+        </svg>
+    );
+}
+
+function ArrowIcon() {
+    return (
+        <svg aria-hidden="true" className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+        </svg>
+    );
+}
+
 export default function LandingSectionOne() {
     return (
-        <div className="px-8 py-4">
-            <div
-                className="relative bg-cover bg-center bg-no-repeat min-h-165 rounded-4xl"
-                style={{ backgroundImage: "url('/hero-banner-yahla-en.png')" }}
-            >
-                <div className="relative z-10 flex flex-col items-start justify-center min-h-165 max-w-7xl mx-auto space-y-8">
-                    <div className="flex flex-col items-start justify-start space-y-3">
-                        <h1 className="text-white text-7xl font-normal">Your Messages <br />are private</h1>
-                        <p className="font-normal text-lg max-w-96 text-white">Your words, your business. No calls, no leaks, no drama — just private texts.</p>
+        <div className="flex w-full min-w-0 flex-col overflow-x-hidden">
+            <section className="px-4 py-4 sm:px-6 lg:px-10">
+                <div
+                    className="relative isolate min-h-160 w-full overflow-hidden rounded-4xl bg-cover bg-bottom bg-no-repeat sm:min-h-175"
+                    style={{ backgroundImage: "url('/hero-banner-yahla-en.png')" }}
+                >
+                    <div className="absolute inset-0" />
+                    <div className="relative z-10 mx-auto flex min-h-160 w-full max-w-7xl flex-col justify-center px-6 py-16 sm:min-h-175 sm:px-10 lg:px-14">
+                        <div className="w-full max-w-xl space-y-7">
+                            <p className="text-sm font-semibold uppercase text-[#25d366]">YaHla Messenger</p>
+                            <div className="space-y-5">
+                                <h1 className="text-5xl font-normal leading-[1.02] text-white sm:text-7xl lg:text-8xl">
+                                    Chat simply,
+                                    <br />
+                                    share freely
+                                </h1>
+                                <p className="max-w-md text-lg leading-8 text-white sm:text-xl">
+                                    Send texts, photos, voice notes, files, and videos in a simple chat made for everyday moments.
+                                </p>
+                            </div>
+                            <div className="flex w-full flex-col gap-3 sm:flex-row">
+                                <a
+                                    href="#download"
+                                    className="inline-flex items-center justify-center gap-2 rounded-full border border-[#1c1e21] bg-[#25d366] px-6 py-3.5 text-sm font-semibold text-[#1c1e21] transition hover:bg-[#20bd5a]"
+                                >
+                                    <span>Download Android</span>
+                                    <DownloadIcon />
+                                </a>
+                                <a
+                                    href="#messages"
+                                    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
+                                >
+                                    <span>Start messaging</span>
+                                    <ArrowIcon />
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <button className='flex flex-row font-semibold items-center gap-x-2 pr-4 cursor-pointer pl-6 py-3 rounded-full text-neutral-900 bg-[#25d366] hover:bg-[#21c05b] duration-200'>
-                        <p>Download Android</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
-                            <path d="M440-800v487L216-537l-56 57 320 320 320-320-56-57-224 224v-487h-80Z" />
-                        </svg>
-                    </button>
                 </div>
-            </div>
+            </section>
         </div>
     )
 }
