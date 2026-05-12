@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Noto_Sans_Arabic } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/language-provider";
+
+const notoSansArabic = Noto_Sans_Arabic({
+	weight: ["300", "400", "500", "700"],
+	subsets: ["arabic"],
+	variable: "--font-noto-sans-arabic",
+});
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -27,7 +34,11 @@ export default function RootLayout({
 			<head>
 				<link rel="icon" href="/favicon.svg" type="image/svg+xml"></link>
 			</head>
-			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+			<body className={`${notoSansArabic.variable} antialiased`}>
+				<LanguageProvider>
+					{children}
+				</LanguageProvider>
+			</body>
 		</html>
 	);
 }
