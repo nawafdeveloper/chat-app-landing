@@ -11,10 +11,11 @@ import {
 
 import { Language, translations } from "./translations";
 
+// Fix: Make t a union type of all possible translations
 type LanguageContextType = {
     language: Language;
     setLanguage: (lang: Language) => void;
-    t: (typeof translations)["en"];
+    t: (typeof translations)[Language]; // This allows either 'en' or 'ar' translations
 };
 
 const LanguageContext = createContext<LanguageContextType | null>(null);
@@ -24,15 +25,19 @@ export function LanguageProvider({
 }: {
     children: ReactNode;
 }) {
-    const [language, setLanguage] = useState<Language>("ar");
+    const [language, setLanguage] = useState<Language>(() => {
+        if (typeof window === "undefined") {
+            return "ar";
+        }
 
-    useEffect(() => {
         const saved = localStorage.getItem("language");
 
         if (saved === "en" || saved === "ar") {
-            setLanguage(saved);
+            return saved;
         }
-    }, []);
+
+        return "ar";
+    });
 
     useEffect(() => {
         localStorage.setItem("language", language);

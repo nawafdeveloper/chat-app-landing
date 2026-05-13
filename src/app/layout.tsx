@@ -34,7 +34,7 @@ export default function RootLayout({
 			<head>
 				<link rel="icon" href="/favicon.svg" type="image/svg+xml"></link>
 			</head>
-			<body className={`${notoSansArabic.variable} antialiased`}>
+			<body className={`${notoSansArabic.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}>
 				<LanguageProvider>
 					{children}
 				</LanguageProvider>
