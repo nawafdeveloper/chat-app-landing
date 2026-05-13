@@ -86,7 +86,7 @@ export default function LandingSectionOne() {
                                 </a>
 
                                 <a
-                                    href="web.yahla.org"
+                                    href="https://web.yahla.org"
                                     className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
                                 >
                                     <span>{t.heroStartMessaging}</span>

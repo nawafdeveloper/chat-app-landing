@@ -59,7 +59,7 @@ export default function LandingHeader() {
 
                 <div className='flex flex-row items-center gap-2 sm:gap-3'>
                     <Link
-                        href="web.yahla.org"
+                        href="https://web.yahla.org"
                         className='btn-ink hidden flex-row items-center gap-2 rounded-full border border-[#1c1e21] bg-white px-5 py-3 text-sm font-semibold text-[#1c1e21] sm:flex'
                     >
                         <span>{t.headerLogin}</span>
